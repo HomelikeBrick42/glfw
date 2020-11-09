@@ -1,14 +1,14 @@
 project "GLFW"
-    kind "StaticLib"
-    language "C"
-    
-    targetdir ("%{wks.location}/bin/" .. outputdir .. "/%{prj.name}")
-    objdir ("%{wks.location}/bin-int/" .. outputdir .. "/%{prj.name}")
+	kind "StaticLib"
+	language "C"
+		
+	targetdir ("%{wks.location}/bin/" .. outputdir .. "/%{prj.name}")
+	objdir ("%{wks.location}/bin-int/" .. outputdir .. "/%{prj.name}")
 
-    files
+	files
 	{
-        "include/GLFW/glfw3.h",
-        "include/GLFW/glfw3native.h",
+		"include/GLFW/glfw3.h",
+		"include/GLFW/glfw3native.h",
 		"src/glfw_config.h",
 		"src/context.c",
 		"src/init.c",
@@ -16,7 +16,7 @@ project "GLFW"
 		"src/monitor.c",
 		"src/vulkan.c",
 		"src/window.c"
-    }
+	}
 
 	filter "system:windows"
 		systemversion "latest"
@@ -39,9 +39,9 @@ project "GLFW"
 		{ 
 			"_GLFW_WIN32",
 			"_CRT_SECURE_NO_WARNINGS"
-        }
-        
-    filter "system:linux"
+		}
+			
+	filter "system:linux"
 		pic "On"
 
 		systemversion "latest"
@@ -72,8 +72,8 @@ project "GLFW"
 
 	filter "configurations:Release"
 		runtime "Release"
-        optimize "on"
-        
-    filter "configurations:Dist"
+		optimize "on"
+			
+	filter "configurations:Dist"
 		runtime "Release"
 		optimize "on"
